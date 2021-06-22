@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TourDateSchema = new Schema({
-    date: String,
+    date: Date,
     venue: String,
     time: String,
     city: String,
@@ -11,4 +11,4 @@ const TourDateSchema = new Schema({
 
 })
 
-module.exports = mongoose.model('Tour Dates', TourDateSchema);
+module.exports = mongoose.model('TourDate', TourDateSchema);
