@@ -1,0 +1,17 @@
+<% layout('layouts/boilerplate') %>
+
+
+<div class="text-center">
+    <h1 class="text-xl uppercase italic tracking-wider"><%= tourdate.date %></h1>
+    <p><%= tourdate.venue %></p>
+    <p>
+        <%= tourdate.city %>, <%= tourdate.state %>
+    </p>
+    <a href="#" class="underline text-indigo-700">Buy Tickets</a><br>
+    <a href="/tour/<%=tourdate.id%>/edit" class="underline text-indigo-700">Edit Tour Date</a><br>
+    <a href="/" class="underline text-indigo-700">View All Tour Dates</a>
+    <form action="/tour/<%=tourdate._id%>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+
+</div>

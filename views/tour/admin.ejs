@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate') %>
+
+    <h1 class="text-xl uppercase italic tracking-wider text-center pb-10">Tour Dates</h1>
+
+
+    <table class="table-auto mx-auto text-left w-3/4">
+        <tr>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Tickets</th>
+        </tr>
+        <% for (let tourdate of tourdates) { %>
+            <tr>
+                <td>
+                    <%= tourdate.date %>
+                </td>
+                <td>
+                    <%= tourdate.venue %>
+                </td>
+                <td>
+                    <%= tourdate.city %>
+                </td>
+                <td>
+                    <%= tourdate.state %>
+                </td>
+                <td>
+                    <%= tourdate.tickets %>
+                </td>
+                <td>
+                    <a>edit</a>
+                </td>
+                <td>
+                    <a>delete</a>
+                </td>
+            </tr>
+            <% } %>
+    </table>

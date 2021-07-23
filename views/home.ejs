@@ -1,31 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<% layout('layouts/boilerplate') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <title>Home</title>
-    
-</head>
+<h1 class="text-xl uppercase italic tracking-wider text-center pb-10">Tour Dates</h1>
 
-<body class="container mx-auto content-center py-40 px-50">
-    <h1 class="text-xl uppercase italic tracking-wider text-center pb-10">Tour Dates</h1>
-    <table class="table-auto mx-auto text-left w-3/4">
+
+<table class="table-auto mx-auto text-left w-3/4">
+    <tr>
+        <th>Date</th>
+        <th>Venue</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Tickets</th>
+    </tr>
+    <% for (let tourdate of tourdates) { %>
         <tr>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Venue</th>
-            <th>City</th>
-            <th>Tickets</th>
+            <td>
+                <a href="/tour/<%=tourdate.id%>" class="underline text-indigo-700"><%= tourdate.date %></a>
+            </td>
+            <td>
+                <%= tourdate.venue %>
+            </td>
+            <td>
+                <%= tourdate.city %>
+            </td>
+            <td>
+                <%= tourdate.state %>
+            </td>
+            <td>
+                <%= tourdate.tickets %>
+            </td>
         </tr>
-        <tr>
-            <td>JUL 2 FRI</td>
-            <td>5:00pm</td>
-            <td>Ride Festival 2021</td>
-            <td>Telluride, CO, United States</td>
-            <td>yup</td>
-        </tr>
-    </table>
-</body>
+        <% } %>
+</table>
+

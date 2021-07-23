@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate') %>
+<div class="container mx-auto max-w-md">
+
+    <h1 class="text-xl uppercase italic tracking-wider text-center pb-10">Edit Tour Date</h1>
+
+    <div class="w-full">
+        <form action="/tour/<%=tourdate.id%>?_method=PUT" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="date">Date</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="date" name="date" placeholder="date" value="<%=tourdate.date%>">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="venue">Venue</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="venue" name="venue" placeholder="venue" value="<%=tourdate.venue%>">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="city">City</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="city" name="city" placeholder="city" value="<%=tourdate.city%>">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="state">State</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="state" name="state" placeholder="state" value="<%=tourdate.state%>">
+            </div>
+            <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="tickets-available">Tickets</label>
+                    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="tickets" id="tickets">
+                        <option value="tickets-available">Tickets Available</option>
+                        <option value="tickets-sold-out">Tickets Sold Out</option>
+                    </select>
+                    <!-- <input type="radio" id="ticketsAvailable" name="tour[tickets]">
+                    <label for="tickets-sold-out">Tickets Sold Out</label>
+                    <input type="radio" id="ticketsSoldOut" name="tour[tickets]"> -->
+            </div>
+            <input class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"type="submit" value="Save Changes">
+                <!-- </div> -->
+        </form>
+        <a href="/tour/<%=tourdate.id%>" class="underline text-indigo-700">Cancel</a>
+    </div>
+</div>
